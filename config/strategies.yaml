@@ -1,0 +1,13 @@
+strategies:
+  - name: trend_ema
+    enabled: true
+    timeframe: 15m
+    allocation: "0.34"
+  - name: mean_reversion
+    enabled: true
+    timeframe: 15m
+    allocation: "0.33"
+  - name: breakout
+    enabled: true
+    timeframe: 1h
+    allocation: "0.33"

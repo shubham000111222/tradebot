@@ -1,0 +1,17 @@
+mode: paper
+initial_cash_usdt: "1000.00"
+symbols:
+  - BTC/USDT
+  - ETH/USDT
+  - SOL/USDT
+  - BNB/USDT
+  - XRP/USDT
+base_timeframe: 1m
+signal_timeframes:
+  - 15m
+  - 1h
+data_dir: data
+state_dir: state
+log_dir: logs
+timezone: UTC
+live_trading_enabled_env: LIVE_TRADING_ENABLED

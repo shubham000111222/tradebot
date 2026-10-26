@@ -1,0 +1,10 @@
+risk_per_trade: "0.005"
+max_symbol_exposure: "0.20"
+max_total_exposure: "0.60"
+max_correlated_bucket_exposure: "0.40"
+max_open_positions: 5
+daily_loss_limit: "0.02"
+daily_flatten_limit: "0.03"
+weekly_loss_limit: "0.05"
+max_drawdown: "0.10"
+max_capital_usdt: "1000.00"

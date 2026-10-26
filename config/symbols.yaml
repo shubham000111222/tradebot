@@ -1,0 +1,16 @@
+symbols:
+  - symbol: BTC/USDT
+    enabled: true
+    correlated_bucket: BTC
+  - symbol: ETH/USDT
+    enabled: true
+    correlated_bucket: BTC
+  - symbol: SOL/USDT
+    enabled: true
+    correlated_bucket: BTC
+  - symbol: BNB/USDT
+    enabled: true
+    correlated_bucket: ALT
+  - symbol: XRP/USDT
+    enabled: true
+    correlated_bucket: ALT
