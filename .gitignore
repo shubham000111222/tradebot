@@ -11,8 +11,8 @@ build/
 *.egg-info/
 
 .env
-data/
-logs/
-reports/
-state/
+/data/
+/logs/
+/reports/
+/state/
 *.sqlite3
