@@ -1,0 +1,1 @@
+"""Pure, replayable trading strategies."""
