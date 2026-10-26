@@ -3,8 +3,9 @@
 from __future__ import annotations
 
 from datetime import date
+from importlib import import_module
 from pathlib import Path
-from typing import Any, cast
+from typing import Any
 
 from tradebot.data.models import OrderBookSnapshot, TradeTick
 
@@ -64,10 +65,11 @@ class MarketDataStore:
 
     def query(self, sql: str) -> list[tuple[Any, ...]]:
         """Run a read-only DuckDB query against the store."""
-        import duckdb  # type: ignore[import-not-found]
+        duckdb = import_module("duckdb")
 
         with duckdb.connect() as connection:
-            return cast(list[tuple[Any, ...]], connection.execute(sql).fetchall())
+            rows = connection.execute(sql).fetchall()
+            return [tuple(row) for row in rows]
 
     def _partition(self, kind: str, symbol: str, day: date) -> Path:
         path = self.root / kind / f"symbol={symbol.replace('/', '_')}" / f"date={day.isoformat()}"
@@ -76,8 +78,8 @@ class MarketDataStore:
 
     @staticmethod
     def _append_rows(path: Path, rows: list[dict[str, object]]) -> None:
-        import pyarrow as pa  # type: ignore[import-untyped]
-        import pyarrow.parquet as pq  # type: ignore[import-untyped]
+        pa = import_module("pyarrow")
+        pq = import_module("pyarrow.parquet")
 
         new_table = pa.Table.from_pylist(rows)
         if path.exists():
