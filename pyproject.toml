@@ -26,6 +26,9 @@ storage = [
   "duckdb>=1.0,<2",
   "pyarrow>=17,<22",
 ]
+dashboard = [
+  "streamlit>=1.38,<2",
+]
 
 [project.scripts]
 tradebot = "tradebot.main:main"

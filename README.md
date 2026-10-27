@@ -11,6 +11,7 @@ python -m venv .venv
 # Windows: .venv\Scripts\activate
 python -m pip install -e ".[dev]"
 tradebot --config config/settings.yaml
+tradebot --config config/settings.yaml --demo
 pytest
 ```
 
@@ -32,3 +33,10 @@ data/ logs/ reports/     runtime output (ignored by git)
 ```
 
 No exchange credentials are required for the Week 1 demo.
+
+The read-only dashboard is optional:
+
+```bash
+python -m pip install -e ".[dashboard]"
+streamlit run dashboard/app.py
+```
