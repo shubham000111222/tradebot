@@ -2,11 +2,9 @@ services:
   bot:
     build: .
     restart: unless-stopped
-    env_file:
-      - .env
     volumes:
       - ./config:/app/config:ro
       - ./data:/app/data
       - ./state:/app/state
       - ./logs:/app/logs
-    command: ["tradebot", "--config", "config/settings.yaml"]
+    command: ["tradebot", "--config", "config/settings.yaml", "--demo"]
